@@ -1,0 +1,6 @@
+{
+  "name": "Vegas 50k - Official Web",
+  "description": "Sitio web oficial de Vegas 50k: VIP Bankroll & Casino Betting Dashboard para Android. Descarga de APK, Whitepaper y analíticas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
