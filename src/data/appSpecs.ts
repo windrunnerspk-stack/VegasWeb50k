@@ -35,7 +35,7 @@ export const APP_SPECS: AppSpecInfo = {
   targetSdk: 'Android 15 / 16',
   fileSize: '18.4 MB',
   releaseDate: 'Octubre 2026',
-  downloadUrl: '/downloads/vegas-50k-v1.0.0.apk',
+  downloadUrl: 'https://github.com/windrunnerspk-stack/Vegas50KK/releases/download/v1.0.0/vegas-50k-v1.0.0.apk',
   supportEmail: 'soporte@vegas50k.com',
   techStack: {
     language: 'Motor de alto rendimiento',
