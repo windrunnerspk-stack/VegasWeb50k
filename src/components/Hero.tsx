@@ -1,15 +1,11 @@
 import React from 'react';
 import { Download, FileText, ShieldAlert, Sparkles, SlidersHorizontal, ArrowDown } from 'lucide-react';
 import { APP_SPECS } from '../data/appSpecs';
+import { triggerApkDownload } from '../utils/downloadApk';
 
 export const Hero: React.FC = () => {
   const handleDirectDownload = () => {
-    const link = document.createElement('a');
-    link.href = APP_SPECS.downloadUrl;
-    link.setAttribute('download', `vegas-50k-v${APP_SPECS.version}.apk`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    triggerApkDownload();
   };
 
   return (

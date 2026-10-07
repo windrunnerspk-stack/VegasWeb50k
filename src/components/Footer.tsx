@@ -1,15 +1,11 @@
 import React from 'react';
 import { Download, FileText, ShieldCheck, Mail, Lock } from 'lucide-react';
 import { APP_SPECS } from '../data/appSpecs';
+import { triggerApkDownload } from '../utils/downloadApk';
 
 export const Footer: React.FC = () => {
   const handleDirectApk = () => {
-    const link = document.createElement('a');
-    link.href = APP_SPECS.downloadUrl;
-    link.setAttribute('download', `vegas-50k-v${APP_SPECS.version}.apk`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    triggerApkDownload();
   };
 
   return (

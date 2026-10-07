@@ -12,6 +12,7 @@ import {
   Lock
 } from 'lucide-react';
 import { APP_SPECS } from '../data/appSpecs';
+import { triggerApkDownload } from '../utils/downloadApk';
 
 export const DownloadSection: React.FC = () => {
   const [downloadProgress, setDownloadProgress] = useState<number | null>(null);
@@ -31,16 +32,13 @@ export const DownloadSection: React.FC = () => {
       });
     }, 120);
 
-    const link = document.createElement('a');
-    link.href = APP_SPECS.downloadUrl;
-    link.setAttribute('download', `vegas-50k-v${APP_SPECS.version}.apk`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    triggerApkDownload();
   };
 
   const handleCopyDownloadLink = () => {
-    const fullUrl = `${window.location.origin}${APP_SPECS.downloadUrl}`;
+    const fullUrl = APP_SPECS.downloadUrl.startsWith('http')
+      ? APP_SPECS.downloadUrl
+      : `${window.location.origin}${APP_SPECS.downloadUrl}`;
     navigator.clipboard.writeText(fullUrl);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2000);

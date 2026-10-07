@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Download, ShieldCheck, Sparkles } from 'lucide-react';
 import { APP_SPECS } from '../data/appSpecs';
+import { triggerApkDownload } from '../utils/downloadApk';
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,12 +17,7 @@ export const Navbar: React.FC = () => {
 
   const handleDirectApkDownload = (e?: React.MouseEvent) => {
     if (e) e.preventDefault();
-    const link = document.createElement('a');
-    link.href = APP_SPECS.downloadUrl;
-    link.setAttribute('download', `vegas-50k-v${APP_SPECS.version}.apk`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    triggerApkDownload();
   };
 
   return (

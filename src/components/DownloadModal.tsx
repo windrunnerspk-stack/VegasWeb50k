@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Download, ShieldCheck, HardDrive, Smartphone, Check } from 'lucide-react';
 import { APP_SPECS } from '../data/appSpecs';
+import { triggerApkDownload } from '../utils/downloadApk';
 
 interface DownloadModalProps {
   isOpen: boolean;
@@ -11,12 +12,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
   if (!isOpen) return null;
 
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = APP_SPECS.downloadUrl;
-    link.setAttribute('download', `vegas-50k-v${APP_SPECS.version}.apk`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    triggerApkDownload();
   };
 
   return (

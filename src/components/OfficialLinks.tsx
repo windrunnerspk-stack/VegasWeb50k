@@ -12,6 +12,7 @@ import {
   HelpCircle
 } from 'lucide-react';
 import { APP_SPECS } from '../data/appSpecs';
+import { triggerApkDownload } from '../utils/downloadApk';
 
 export const OfficialLinks: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -69,12 +70,7 @@ export const OfficialLinks: React.FC = () => {
 
   const handleAction = (type: string) => {
     if (type === 'download') {
-      const link = document.createElement('a');
-      link.href = APP_SPECS.downloadUrl;
-      link.setAttribute('download', `vegas-50k-v${APP_SPECS.version}.apk`);
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      triggerApkDownload();
     } else if (type === 'whitepaper') {
       const el = document.getElementById('whitepaper');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
