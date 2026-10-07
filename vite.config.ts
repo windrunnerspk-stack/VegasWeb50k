@@ -1,11 +1,24 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import {defineConfig, Plugin} from 'vite';
+
+const apkMimePlugin = (): Plugin => ({
+  name: 'apk-mime-headers',
+  configureServer(server) {
+    server.middlewares.use((req, res, next) => {
+      if (req.url && req.url.includes('.apk')) {
+        res.setHeader('Content-Type', 'application/vnd.android.package-archive');
+        res.setHeader('Content-Disposition', 'attachment; filename="vegas-50k-v1.0.0.apk"');
+      }
+      next();
+    });
+  },
+});
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), apkMimePlugin()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

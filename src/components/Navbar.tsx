@@ -30,12 +30,12 @@ export const Navbar: React.FC = () => {
           <span className="text-[#64748B]">·</span>
           <span>Disponible para Android</span>
           <span className="text-[#64748B]">·</span>
-          <button
-            onClick={() => handleDirectApkDownload()}
+          <a
+            href={APP_SPECS.downloadUrl}
             className="text-[#FFD700] hover:underline font-bold inline-flex items-center gap-1 cursor-pointer"
           >
             Descarga Directa Inmediata
-          </button>
+          </a>
         </div>
       </div>
 
@@ -79,13 +79,13 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Right CTA: DIRECT DOWNLOAD */}
           <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={() => handleDirectApkDownload()}
+            <a
+              href={APP_SPECS.downloadUrl}
               className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#FFD700] to-[#F59E0B] hover:from-[#FFD700] hover:to-[#F59E0B] text-[#0B0E14] font-black text-sm shadow-lg shadow-[#F59E0B]/25 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <Download className="w-4 h-4 stroke-[2.5]" />
               <span>Descargar APK</span>
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu trigger */}
@@ -118,16 +118,14 @@ export const Navbar: React.FC = () => {
           </nav>
 
           <div className="pt-2">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                handleDirectApkDownload();
-              }}
+            <a
+              href={APP_SPECS.downloadUrl}
+              onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#F59E0B] text-[#0B0E14] font-black text-center cursor-pointer shadow-md"
             >
               <Download className="w-4 h-4 stroke-[2.5]" />
               Descargar APK Directo
-            </button>
+            </a>
           </div>
         </div>
       )}

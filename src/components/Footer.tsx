@@ -109,13 +109,13 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <button
-                  onClick={handleDirectApk}
+                <a
+                  href={APP_SPECS.downloadUrl}
                   className="hover:text-[#FFD700] transition-colors text-left flex items-center gap-1.5 cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5 text-[#F59E0B]" />
                   <span>Descargar APK v{APP_SPECS.version}</span>
-                </button>
+                </a>
               </li>
               <li>
                 <a

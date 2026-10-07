@@ -106,18 +106,22 @@ export const DownloadSection: React.FC = () => {
             </div>
 
             {/* Direct Download Button */}
-            <div className="pt-6 space-y-4">
-              <button
-                onClick={handleDownloadApk}
-                className="w-full py-4.5 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#FFD700] to-[#F59E0B] text-[#0B0E14] font-black text-lg shadow-xl shadow-[#F59E0B]/25 hover:shadow-[#F59E0B]/40 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-3 cursor-pointer"
+            <div className="pt-6 space-y-3">
+              <a
+                href={APP_SPECS.downloadUrl}
+                className="w-full py-4.5 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#FFD700] to-[#F59E0B] text-[#0B0E14] font-black text-lg shadow-xl shadow-[#F59E0B]/25 hover:shadow-[#F59E0B]/40 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-3 cursor-pointer text-center"
               >
                 <Download className="w-6 h-6 stroke-[2.5]" />
-                <span>
-                  {downloadProgress !== null
-                    ? `Descargando paquete... ${downloadProgress}%`
-                    : `Descargar APK Oficial Directo`}
-                </span>
-              </button>
+                <span>Descargar APK Oficial (20 MB)</span>
+              </a>
+
+              <a
+                href="/downloads/vegas-50k-v1.0.0.apk"
+                download="vegas-50k-v1.0.0.apk"
+                className="w-full py-3 rounded-xl border border-[#222E42] bg-[#0B0E14] hover:bg-[#172030] hover:border-[#384966] text-[#F8FAFC] font-semibold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
+              >
+                <span>Descarga Alternativa / Servidor Web (20 MB)</span>
+              </a>
 
               <div className="flex items-center justify-between text-xs text-[#94A3B8] pt-1">
                 <span>Descarga libre y directa sin tiendas de terceros</span>
@@ -126,7 +130,7 @@ export const DownloadSection: React.FC = () => {
                   className="text-[#FFD700] hover:underline inline-flex items-center gap-1 font-semibold cursor-pointer"
                 >
                   {copiedLink ? <Check className="w-3.5 h-3.5 text-[#10B981]" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copiedLink ? 'Enlace copiado' : 'Copiar enlace de descarga'}</span>
+                  <span>{copiedLink ? 'Enlace copiado' : 'Copiar enlace'}</span>
                 </button>
               </div>
             </div>
