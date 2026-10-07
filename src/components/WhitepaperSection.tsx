@@ -30,7 +30,7 @@ export const WhitepaperSection: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'Vegas-50k-Whitepaper-v1.0.0.md');
+    link.setAttribute('download', 'Vegas-50k-Whitepaper-v1.0.1.md');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

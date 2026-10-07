@@ -7,7 +7,7 @@ export interface WhitepaperSectionItem {
 
 export const WHITEPAPER_METADATA = {
   title: 'Vegas 50k: Marco Teórico y Arquitectura de Gestión Algorítmica de Bankroll',
-  subtitle: 'Whitepaper Oficial · Versión 1.0.0 · Edición Comercial',
+  subtitle: 'Whitepaper Oficial · Versión 1.0.1 · Edición Comercial',
   author: 'Vegas 50k Core Analytics & Engineering',
   appPackage: 'com.aistudio.vegas50k.vgtrak',
 };

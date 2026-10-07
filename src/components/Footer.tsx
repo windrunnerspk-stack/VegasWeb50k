@@ -111,6 +111,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href={APP_SPECS.downloadUrl}
+                  download={`vegas-50k-v${APP_SPECS.version}.apk`}
                   className="hover:text-[#FFD700] transition-colors text-left flex items-center gap-1.5 cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5 text-[#F59E0B]" />

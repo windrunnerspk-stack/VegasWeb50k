@@ -66,13 +66,14 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
 
         {/* Direct Download Action Button */}
         <div className="space-y-3">
-          <button
-            onClick={handleDownload}
-            className="w-full py-4 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#FFD700] to-[#F59E0B] text-[#0B0E14] font-black text-base shadow-xl shadow-[#F59E0B]/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
+          <a
+            href={APP_SPECS.downloadUrl}
+            download={`vegas-50k-v${APP_SPECS.version}.apk`}
+            className="w-full py-4 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#FFD700] to-[#F59E0B] text-[#0B0E14] font-black text-base shadow-xl shadow-[#F59E0B]/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
           >
             <Download className="w-5 h-5 stroke-[2.5]" />
-            <span>Descargar Archivo APK Directo Ahora</span>
-          </button>
+            <span>Descargar Archivo APK v{APP_SPECS.version} Directo Ahora</span>
+          </a>
         </div>
 
         {/* Instructions */}

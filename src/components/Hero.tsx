@@ -46,6 +46,7 @@ export const Hero: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
             <a
               href={APP_SPECS.downloadUrl}
+              download={`vegas-50k-v${APP_SPECS.version}.apk`}
               className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#FFD700] to-[#F59E0B] text-[#0B0E14] font-black text-base shadow-xl shadow-[#F59E0B]/25 hover:shadow-[#F59E0B]/40 hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex items-center gap-3 cursor-pointer"
             >
               <Download className="w-5 h-5 stroke-[2.5]" />

@@ -81,6 +81,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex items-center gap-3">
             <a
               href={APP_SPECS.downloadUrl}
+              download={`vegas-50k-v${APP_SPECS.version}.apk`}
               className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#FFD700] to-[#F59E0B] hover:from-[#FFD700] hover:to-[#F59E0B] text-[#0B0E14] font-black text-sm shadow-lg shadow-[#F59E0B]/25 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <Download className="w-4 h-4 stroke-[2.5]" />
@@ -120,6 +121,7 @@ export const Navbar: React.FC = () => {
           <div className="pt-2">
             <a
               href={APP_SPECS.downloadUrl}
+              download={`vegas-50k-v${APP_SPECS.version}.apk`}
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#F59E0B] text-[#0B0E14] font-black text-center cursor-pointer shadow-md"
             >

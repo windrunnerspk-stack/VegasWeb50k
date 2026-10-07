@@ -8,8 +8,9 @@ const apkMimePlugin = (): Plugin => ({
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
       if (req.url && req.url.includes('.apk')) {
+        const cleanName = req.url.split('/').pop()?.split('?')[0] || 'vegas-50k-v1.0.1.apk';
         res.setHeader('Content-Type', 'application/vnd.android.package-archive');
-        res.setHeader('Content-Disposition', 'attachment; filename="vegas-50k-v1.0.0.apk"');
+        res.setHeader('Content-Disposition', `attachment; filename="${cleanName}"`);
       }
       next();
     });
